@@ -1,0 +1,24 @@
+1. expo setup: npx create-expo-app --template
+2. blank typescript template
+3. web setup: npx expo install react-dom react-native-web @expo/metro-runtime
+4. carousel
+
+5.carousel setup:
+    1. npx expo install react-native-reanimated-carousel
+    2. npx expo install react-native-reanimated react-native-gesture-handler
+    3. wrap app with gesture handler: <GestureHandlerRootView></GestureHandlerRootView>
+
+    5. carousel example boilerplate code
+    6. use images as data
+    7. render images using carousel tag (similar to that of flatlist)
+
+6. understanding carousel:
+    1. boilerplate code
+    2. ref -> required for pagination, like reference to the page
+    {
+        use ref -> accessing ui elements like clicks, almost    similar to useState but doesnt update on change
+    }
+    3. onProgressChange -> from react-native-animated-carousel, speacial callback function that is called when scroll is updated
+    4. progress-> just like page number
+
+7. Resorts
