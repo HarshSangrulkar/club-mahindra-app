@@ -1,7 +1,12 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+import { FlatList, StyleSheet, Text, TouchableOpacity, View, Image, useWindowDimensions } from 'react-native'
 import React from 'react'
 
 const DisplayResort = ({ route, navigation }: any) => {
+    const { width, height } = useWindowDimensions();
+    const isPhone = width <= 768;
+
+    const newHeight = isPhone ? 250 : 450;
+    const newWidth = isPhone ? width * 0.5 : width * 0.6;
     const { image } = route.params;
 
     const goToCLub = () => {
@@ -15,8 +20,8 @@ const DisplayResort = ({ route, navigation }: any) => {
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item, index }) => (
                     <View >
-                        <Image source={{ uri: item }} style={[styles.image, { height: 300 }]}
-                            resizeMode='cover' />
+                        <Image source={{ uri: item }} style={[styles.image, { height: newHeight }]}
+                            resizeMode='stretch' />
                         <Text style={styles.imageText}>Resort </Text>
                     </View>
                 )}
